@@ -22,8 +22,8 @@ export default function Profile() {
           <h1 className="text-xl font-bold text-blue-600">MediaSocial</h1>
           <nav className="space-x-6 text-gray-700 font-medium">
             <a href="/dashboard" className="hover:text-blue-600">Início</a>
-            <a href="#" className="hover:text-blue-600">Equipes</a>
-            <a href="#" className="hover:text-blue-600">Minha Rede</a>
+            <a href="/teams" className="hover:text-blue-600">Equipes</a>
+            <a href="/minharede" className="hover:text-blue-600">Minha Rede</a>
             <a href="#" className="hover:text-blue-600">Notificações</a>
             <a href="#" className="hover:text-blue-600">Mensagens</a>
             <a href="#" className="hover:text-blue-600">Pesquisa</a>
@@ -139,18 +139,18 @@ export default function Profile() {
             <div>
               <h4 className="font-medium text-gray-700">Redes Sociais</h4>
               <ul className="text-blue-600 space-y-1 mt-2">
-                <li><a href="https://www.linkedin.com/in/kaikinattan/" target="_blank" rel="noreferrer">💼 LinkedIn</a></li>
-                <li><a href="https://github.com/kaikinattandossantos" target="_blank" rel="noreferrer">🧠 GitHub</a></li>
-                <li><a href="#" className="hover:underline">📷 Instagram</a></li>
+                <li><a href="https://www.linkedin.com/in/kaikinattan/" target="_blank" rel="noreferrer"> LinkedIn</a></li>
+                <li><a href="https://github.com/kaikinattandossantos" target="_blank" rel="noreferrer"> GitHub</a></li>
+                <li><a href="https://www.instagram.com/kaikinattan/" className="hover:underline"> Instagram</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-medium text-gray-700">Status Jurídico e Social</h4>
               <ul className="space-y-1 text-gray-600 mt-2">
-                <li>⚖️ Nenhum processo ativo</li>
-                <li>🕊️ Participa de grupos: Tecnologia, Inovação, Empreendedorismo</li>
-                <li>🎭 Interesses pessoais: Anime, Filosofia, MMA, IA</li>
+                <li> Nenhum processo ativo</li>
+                <li> Participa de grupos: Tecnologia, Inovação, Empreendedorismo</li>
+                <li> Interesses pessoais: Anime, Filosofia, MMA, IA</li>
               </ul>
             </div>
           </div>
@@ -160,9 +160,9 @@ export default function Profile() {
         <section className="mt-10">
           <h3 className="text-xl font-semibold text-gray-800 mb-3">Projetos em Destaque</h3>
           <ul className="space-y-2 text-blue-600">
-            <li><a href="https://github.com/kaikinattandossantos/Microsservico_Acoes_B3" target="_blank" rel="noreferrer">📈 Microsserviço de Ações B3</a></li>
-            <li><a href="https://github.com/kaikinattandossantos/Hackathon_NASA" target="_blank" rel="noreferrer">🌎 Projeto Manguesol (NASA Space Apps)</a></li>
-            <li><a href="https://github.com/kaikinattandossantos/Infinity_APP" target="_blank" rel="noreferrer">🧑‍💻 Plataforma Infinity APP</a></li>
+            <li><a href="https://github.com/kaikinattandossantos/Microsservico_Acoes_B3" target="_blank" rel="noreferrer"> Microsserviço de Ações B3</a></li>
+            <li><a href="https://github.com/kaikinattandossantos/Hackathon_NASA" target="_blank" rel="noreferrer"> Projeto Manguesol (NASA Space Apps)</a></li>
+            <li><a href="https://github.com/kaikinattandossantos/Infinity_APP" target="_blank" rel="noreferrer"> Plataforma Infinity APP</a></li>
           </ul>
         </section>
       </div>

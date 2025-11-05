@@ -3,6 +3,9 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
+import MyNetwork from "./pages/MyNetwork";
+import Teams from "./pages/Teams";
+
 
 function App() {
   return (
@@ -13,6 +16,9 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/minharede" element={<MyNetwork />} />
+        <Route path="/teams" element={<Teams />} />
+
       </Routes>
     </BrowserRouter>
   );
