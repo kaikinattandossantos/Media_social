@@ -6,6 +6,8 @@ import Profile from "./pages/Profile";
 import MyNetwork from "./pages/MyNetwork";
 import Teams from "./pages/Teams";
 import Home from "./pages/Home";
+import Notifications from "./pages/Notifications";
+
 
 
 
@@ -21,6 +23,7 @@ function App() {
         <Route path="/minharede" element={<MyNetwork />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/notifications" element={<Notifications />} />
 
       </Routes>
     </BrowserRouter>
