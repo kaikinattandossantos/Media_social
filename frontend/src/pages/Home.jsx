@@ -56,7 +56,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
           <h1 className="text-xl font-bold text-blue-600">MediaSocial</h1>
           <nav className="space-x-6 text-gray-700 font-medium">
-            <Link to="/dashboard" className="hover:text-blue-600">Início</Link>
+            <Link to="/home" className="hover:text-blue-600">Início</Link>
             <Link to="/minharede" className="hover:text-blue-600">Minha Rede</Link>
             <Link to="/teams" className="hover:text-blue-600">Equipes</Link>
             <Link to="/profile/1" className="hover:text-blue-600">Perfil</Link>

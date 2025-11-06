@@ -68,11 +68,11 @@ export default function Teams() {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
           <h1 className="text-xl font-bold text-blue-600">MediaSocial</h1>
           <nav className="space-x-6 text-gray-700 font-medium">
-            <Link to="/dashboard" className="hover:text-blue-600">
+            <Link to="/home" className="hover:text-blue-600">
               Início
             </Link>
             <Link
-              to="/mynetwork"
+              to="/minharede"
               className="hover:text-blue-600"
             >
               Minha Rede
