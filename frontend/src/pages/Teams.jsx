@@ -83,7 +83,7 @@ export default function Teams() {
             >
               Equipes
             </Link>
-            <Link to="#" className="hover:text-blue-600">
+            <Link to="/notifications" className="hover:text-blue-600">
               Notificações
             </Link>
             <Link to="#" className="hover:text-blue-600">

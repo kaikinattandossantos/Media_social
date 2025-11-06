@@ -25,7 +25,7 @@ export default function MyNetwork() {
             <Link to="/home" className="hover:text-blue-600">Início</Link>
             <Link to="/minharede" className="hover:text-blue-600 font-semibold text-blue-600 border-b-2 border-blue-600">Minha Rede</Link>
             <Link to="/teams" className="hover:text-blue-600">Equipes</Link>
-            <Link to="#" className="hover:text-blue-600">Notificações</Link>
+            <Link to="/notifications" className="hover:text-blue-600">Notificações</Link>
             <Link to="#" className="hover:text-blue-600">Mensagens</Link>
             <Link to="#" className="hover:text-blue-600">Pesquisa</Link>
           </nav>

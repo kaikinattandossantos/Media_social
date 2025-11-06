@@ -24,7 +24,7 @@ export default function Profile() {
             <a href="/dashboard" className="hover:text-blue-600">Início</a>
             <a href="/teams" className="hover:text-blue-600">Equipes</a>
             <a href="/minharede" className="hover:text-blue-600">Minha Rede</a>
-            <a href="#" className="hover:text-blue-600">Notificações</a>
+            <a href="/notifications" className="hover:text-blue-600">Notificações</a>
             <a href="#" className="hover:text-blue-600">Mensagens</a>
             <a href="#" className="hover:text-blue-600">Pesquisa</a>
           </nav>
