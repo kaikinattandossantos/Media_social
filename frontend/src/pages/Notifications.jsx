@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Bell, Users, Star, MessageCircle, Calendar } from "lucide-react";
 
 export default function Notifications() {
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+  const idUsuario = usuarioLogado ? usuarioLogado.id : "";
   const [notificacoes, setNotificacoes] = useState({
     equipes: [],
     avaliacoes: [],
@@ -58,8 +60,8 @@ export default function Notifications() {
             <Link to="/minharede" className="hover:text-blue-600">Minha Rede</Link>
             <Link to="/teams" className="hover:text-blue-600">Equipes</Link>
             <Link to="/notifications" className="text-blue-600 border-b-2 border-blue-600 pb-1">Notificações</Link>
-            <Link to="/profile/1" className="hover:text-blue-600">Perfil</Link>
-          </nav>
+          <Link to={`/profile/${idUsuario}`} className="hover:text-blue-600 font-semibold text-blue-600">Perfil</Link>
+        </nav>
         </div>
       </header>
 

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+  const idUsuario = usuarioLogado ? usuarioLogado.id : "";
   const [notificacoes, setNotificacoes] = useState([]);
   const [eventos, setEventos] = useState([]);
 
@@ -59,7 +61,7 @@ export default function Home() {
             <Link to="/home" className="hover:text-blue-600">Início</Link>
             <Link to="/minharede" className="hover:text-blue-600">Minha Rede</Link>
             <Link to="/teams" className="hover:text-blue-600">Equipes</Link>
-            <Link to="/profile/1" className="hover:text-blue-600">Perfil</Link>
+            <Link to={`/profile/${idUsuario}`} className="hover:text-blue-600">Perfil</Link>
           </nav>
         </div>
       </header>

@@ -21,7 +21,7 @@ export default function Profile() {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
           <h1 className="text-xl font-bold text-blue-600">MediaSocial</h1>
           <nav className="space-x-6 text-gray-700 font-medium">
-            <a href="/dashboard" className="hover:text-blue-600">Início</a>
+            <a href="/home" className="hover:text-blue-600">Início</a>
             <a href="/teams" className="hover:text-blue-600">Equipes</a>
             <a href="/minharede" className="hover:text-blue-600">Minha Rede</a>
             <a href="/notifications" className="hover:text-blue-600">Notificações</a>
