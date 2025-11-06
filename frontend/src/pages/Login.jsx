@@ -15,7 +15,7 @@ export default function Login() {
 
     if (user) {
       localStorage.setItem("usuarioLogado", JSON.stringify(user));
-      navigate("/dashboard");
+      navigate("/home");
     } else {
       setErro("Email ou senha incorretos.");
     }
