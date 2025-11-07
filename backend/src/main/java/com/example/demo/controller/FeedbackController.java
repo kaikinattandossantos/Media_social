@@ -49,4 +49,11 @@ public class FeedbackController {
                 .toList();
         return ResponseEntity.ok(feedbacks);
     }
+
+    @GetMapping("/alvo/{alvoId}")
+    public ResponseEntity<List<Feedback>> listarPorAlvo(@PathVariable Long alvoId) {
+        List<Feedback> feedbacks = feedbackRepository.findByAlvoId(alvoId);
+        return ResponseEntity.ok(feedbacks);
+    }
+
 }
