@@ -8,8 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+    @Autowired private UserRepository userRepository;
 
     public User cadastrarUsuario(User user) {
         if (!CpfUtils.isCPFValido(user.getCpf())) {
@@ -24,7 +23,7 @@ public class UserService {
             throw new IllegalArgumentException("CPF já cadastrado.");
         }
 
-        user.setVerificado(true); 
-        return userRepository.save(user); 
+        user.setVerificado(true);
+        return userRepository.save(user);
     }
 }

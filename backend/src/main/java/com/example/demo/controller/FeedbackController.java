@@ -1,10 +1,12 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.FeedbackDTO;
 import com.example.demo.model.Feedback;
 import com.example.demo.model.User;
 import com.example.demo.repository.FeedbackRepository;
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,15 +16,11 @@ import java.util.List;
 @RequestMapping("/feedbacks")
 public class FeedbackController {
 
-    @Autowired
-    private FeedbackRepository feedbackRepository;
-
-    @Autowired
-    private UserRepository userRepository;
+    @Autowired private FeedbackRepository feedbackRepository;
+    @Autowired private UserRepository userRepository;
 
     @PostMapping
     public ResponseEntity<?> criarFeedback(@RequestBody Feedback feedback) {
-        // verifica se o autor e o alvo existem
         User autor = userRepository.findById(feedback.getAutor().getId()).orElse(null);
         User alvo = userRepository.findById(feedback.getAlvo().getId()).orElse(null);
 
@@ -30,30 +28,27 @@ public class FeedbackController {
             return ResponseEntity.badRequest().body("Autor ou alvo não encontrado.");
         }
 
-        if (!autor.isVerificado()) {
-            return ResponseEntity.badRequest().body("Apenas usuários verificados podem enviar feedbacks.");
-        }
-
         feedback.setAutor(autor);
         feedback.setAlvo(alvo);
         feedbackRepository.save(feedback);
 
-        return ResponseEntity.ok("Feedback criado com sucesso!");
+        return ResponseEntity.ok(new FeedbackDTO(feedback));
     }
 
-    @GetMapping("/{alvoId}")
-    public ResponseEntity<List<Feedback>> listarFeedbacksPorAlvo(@PathVariable Long alvoId) {
-        List<Feedback> feedbacks = feedbackRepository.findAll()
+    @GetMapping("/alvo/{id}")
+    public List<FeedbackDTO> listarPorAlvo(@PathVariable Long id) {
+        return feedbackRepository.findByAlvoId(id)
                 .stream()
-                .filter(f -> f.getAlvo().getId().equals(alvoId))
+                .map(FeedbackDTO::new)
                 .toList();
-        return ResponseEntity.ok(feedbacks);
     }
 
-    @GetMapping("/alvo/{alvoId}")
-    public ResponseEntity<List<Feedback>> listarPorAlvo(@PathVariable Long alvoId) {
-        List<Feedback> feedbacks = feedbackRepository.findByAlvoId(alvoId);
-        return ResponseEntity.ok(feedbacks);
+    @GetMapping("/recentes")
+    public List<FeedbackDTO> recentes() {
+        return feedbackRepository.findAll(Sort.by(Sort.Direction.DESC, "dataCriacao"))
+                .stream()
+                .limit(10)
+                .map(FeedbackDTO::new)
+                .toList();
     }
-
 }
